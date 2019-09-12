@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Comment;
 use App\Post;
+
 
 
 class PostsController extends Controller
@@ -24,8 +26,10 @@ class PostsController extends Controller
    public function index(){
 
        $posts = Post::all();
+       $comments = Comment::all();
 
-       return view('posts.list')->with('posts', $posts);
+      return view('posts.list')->with('posts', $posts)->with('comments', $comments);
+
 
    }
 

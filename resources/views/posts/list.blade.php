@@ -22,7 +22,7 @@
                     <form method="POST" action="/comment/excluir/{{$comment->id}}">
                         @csrf
                         <p>{{$comment->comment}}</p>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
+                        <button type="submit" class="btn btn-outline-danger">Apagar comentário</button>
                     </form>
                     @endif
                     @endforeach
@@ -31,17 +31,17 @@
 
                         @csrf
                         <div class="form-group">
-                            <textarea class="form-control" name="comment" type="text" placeholder="Adicione um comentário" rows="1" ></textarea>
-                            <button type="submit" class="btn btn-primary">Comentar</button>
+                            <textarea class="form-control" name="comment" type="text" placeholder="Comente sobre..." rows="1" ></textarea>
+                            <button type="submit" class="btn btn-outline-primary">Comentar</button>
                             <p> Likes: {{$post->likes}} </p>
-                            <a class="btn btn-success" href="{{route('like', ['id' => $post->id])}}"> Like</a>
-                            <a class="btn btn-danger" href="{{route('deslike', ['id' => $post->id ])}}"> Deslike</a>
+                            <a class="btn btn-outline-success" href="{{route('like', ['id' => $post->id])}}">Curtir</a>
+                            <a class="btn btn-outline-danger" href="{{route('deslike', ['id' => $post->id ])}}">Deixar de curtir</a>
 
                         </div>
 
                     </form>
                 </div>   
-                <a class="btn btn-danger" href="/post/excluir/{{$post->id}}"> Excluir post</a>
+                <center><a class="btn btn-info" href="/post/excluir/{{$post->id}}">Apagar publicação</a></center>
 
                </div>   
 

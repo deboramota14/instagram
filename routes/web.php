@@ -32,5 +32,12 @@ Route::post('/posts','PostsController@store');
 
 Route::get('/post/like','PostsController@like')->name('like');
 Route::get('/post/deslike','PostsController@deslike')->name('deslike');
-Route::get('/post/comment/comentar', 'CommentControler@comment');
+
+Route::post('/comment/comentar/{id}','CommentController@comment')->name('comment');
+
+Route::post('/comment/excluir/{id}','CommentController@excluir')->name('excluir');
+
+Route::get('/post/excluir/{id}','PostsController@excluir');
+
+
 Route::resource('notifications', 'NotificationController');
