@@ -64,4 +64,27 @@ class PostsController extends Controller
 
    }
 
+     public function like(Request $data) {
+        $post = Post::findOrFail($data['id']);
+        $post->likes += 1;
+        $post->save();
+        return redirect()->route('list_fotos');
+    }
+    public function deslike(Request $data) {
+        $post = Post::findOrFail($data['id']);
+        if ($post->likes > 0) {
+            $post->likes -= 1;
+            $post->save();
+            return redirect()->route('list_fotos');
+        } else {
+            return redirect()->route('list_fotos');
+        }
+    }
+    
+    public function excluir($id) {
+        $excluir = Post::destroy($id);
+        return redirect()->route('list_fotos');
+    }
+
+
 }

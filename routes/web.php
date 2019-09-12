@@ -24,11 +24,13 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@home');
 
 
-Route::get('/posts','PostsController@index');
+Route::get('/posts','PostsController@index')->name('list_fotos');
 
 Route::get('/posts/create','PostsController@create');
 
 Route::post('/posts','PostsController@store');
 
-
+Route::get('/post/like','PostsController@like')->name('like');
+Route::get('/post/deslike','PostsController@deslike')->name('deslike');
+Route::get('/post/comment/comentar', 'CommentControler@comment');
 Route::resource('notifications', 'NotificationController');
