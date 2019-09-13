@@ -37,7 +37,5 @@ Route::post('/comment/comentar/{id}','CommentController@comment')->name('comment
 
 Route::post('/comment/excluir/{id}','CommentController@excluir')->name('excluir');
 
-Route::get('/post/excluir/{id}','PostsController@excluir');
-
 
 Route::resource('notifications', 'NotificationController');

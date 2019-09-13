@@ -85,10 +85,7 @@ class PostsController extends Controller
         }
     }
     
-    public function excluir($id) {
-        $excluir = Post::destroy($id);
-        return redirect()->route('list_fotos');
-    }
+ 
 
 
 }

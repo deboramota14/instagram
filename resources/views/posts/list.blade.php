@@ -41,7 +41,7 @@
 
                     </form>
                 </div>   
-                <center><a class="btn btn-info" href="/post/excluir/{{$post->id}}">Apagar publicação</a></center>
+                
 
                </div>   
 
